@@ -1,5 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import c from '../contributors.json';
+import { config as loadDotenv } from 'dotenv';
+loadDotenv();
 
 interface ContributorInfoFile {
     fetched: string
@@ -59,6 +61,7 @@ const prs_sorted = format_contributors(sort_contributors(contributors.pr_contrib
 const template = readFileSync('page-template.html').toString();
 
 const unsorted_page = template
+    .replace('${org_name}', process.env.ORGANISATION_NAME as string)
     .replace('${fetched}', contributors.fetched)
     .replace('${repos}', repos_unsorted)
     .replace('${commits}', commits_unsorted)
@@ -67,6 +70,7 @@ const unsorted_page = template
 writeFileSync('stats-unsorted.html', unsorted_page);
 
 const sorted_page = template
+    .replace('${org_name}', process.env.ORGANISATION_NAME as string)
     .replace('${fetched}', contributors.fetched)
     .replace('${repos}', repos_sorted)
     .replace('${commits}', commits_sorted)
