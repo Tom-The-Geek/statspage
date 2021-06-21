@@ -1,0 +1,23 @@
+{
+  "name": "contributors-list",
+  "version": "1.0.0",
+  "description": "Generate webpages with a list of contributors on a GitHub organisation",
+  "main": "src/index.ts",
+  "author": "Tom_The_Geek",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "ts-node .",
+    "generate": "ts-node src/generate.ts",
+    "fetch-stats": "ts-node src/fetch-stats.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.6.0",
+    "dotenv": "^10.0.0"
+  }
+}

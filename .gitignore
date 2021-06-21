@@ -1,0 +1,7 @@
+*.json
+*.html
+!*-template.html
+!package.json
+!tsconfig.json
+node_modules/
+.env

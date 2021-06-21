@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nucleoid Contributors</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #252422;
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            margin: 16px 24px;
+            column-gap: 16px;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        @media screen and (max-width: 1265px) {
+            .container {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .container {
+                grid-template-columns: auto;
+            }
+        }
+
+        .contributors-container {
+            border-radius: 8px;
+            background-color: #403D39;
+            margin-bottom: 16px;
+            padding: 16px;
+        }
+
+        .contributors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: max-content;
+        }
+
+        .contributor {
+            text-align: center;
+            border-radius: 4px;
+            margin: 4px;
+        }
+        
+        .contributor-avatar {
+            min-width: 64px;
+            min-height: 64px;
+            width: 6vmax;
+            height: 6vmax;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contributors-container">
+            <h1 class="contributors-title">Repo Contributors</h1>
+            <p>Number of repositories they are listed as a code contributor for</p>
+            <div class="contributors">
+                ${repos}
+            </div>
+        </div>
+        <div class="contributors-container">
+            <h1 class="contributors-title">Commit Contributors</h1>
+            <p>Total number of commits across all repositories</p>
+            <div class="contributors">
+                ${commits}
+            </div>
+        </div>
+        <div class="contributors-container">
+            <h1 class="contributors-title">Issues</h1>
+            <p>Number of issues they have opened</p>
+            <div class="contributors">
+                ${issues}
+            </div>
+        </div>
+        <div class="contributors-container">
+            <h1 class="contributors-title">Pull Requests</h1>
+            <p>Number of pull requests the have opened</p>
+            <div class="contributors">
+                ${prs}
+            </div>
+        </div>
+    </div>
+
+    Updated on ${fetched} ⦁ Generated using <a href="https://github.com/Tom-The-Geek/statspage" target="_blank">statspage</a>
+</body>
+</html>
