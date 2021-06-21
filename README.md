@@ -15,7 +15,7 @@ You then need to install all the dependencies, this can be done using  `yarn ins
 
 ### Fetching the stats
 1. To download the commit stats for the organisation, run `yarn run fetch-stats`. This will use the GitHub API to generate `stats.json`, containing the commit stats for all repositories
-2. To then download all the remaining data and combine them, run `yarn run run start`. This will use `stats.json` and the GitHub API to generate `contributors.json`, containing the file information read to render into page
+2. To then download all the remaining data and combine them, run `yarn run start`. This will use `stats.json` and the GitHub API to generate `contributors.json`, containing the file information read to render into page
 3. To build the final two pages, run `yarn run generate`
 4. This will create the two final HTML files, `stats-sorted.html` and `stats-unsorted.html`
 
@@ -25,3 +25,6 @@ You then need to install all the dependencies, this can be done using  `yarn ins
 | `contributors.json` | Processed data containing file contribution counts for each user in a variety of categories |
 | `stats-unsorted.html` | Contains a rendered HTML page of all contributors, sorted by username |
 | `stats-sorted.html` | Contains a rendered HTML page of all contributors, sorted by contribution count |
+
+### Troubleshooting
+If the `yarn run start` fails with a typescript relating to the stats file (eg. `Property '"SomeRepoName"' is incompatible with index signature.`), then wait a few minutes and run `yarn run fetch-stats` again. It appears that sometimes GitHub can take a moment to generate stats for the first time, especially if no-one has visited the `/graphs/contributors` page on the repo, and so returns an empty response.
