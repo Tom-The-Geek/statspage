@@ -28,3 +28,7 @@ You then need to install all the dependencies, this can be done using  `yarn ins
 
 ### Troubleshooting
 If the `yarn run start` fails with a typescript relating to the stats file (eg. `Property '"SomeRepoName"' is incompatible with index signature.`), then wait a few minutes and run `yarn run fetch-stats` again. It appears that sometimes GitHub can take a moment to generate stats for the first time, especially if no-one has visited the `/graphs/contributors` page on the repo, and so returns an empty response.
+
+### Licencing
+All pages generated using this tool are licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+The code for the generator itself is licensed under [the MIT license](https://github.com/Tom-The-Geek/statspage/blob/main/LICENSE.txt)
